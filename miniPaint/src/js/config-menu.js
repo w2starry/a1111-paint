@@ -162,7 +162,7 @@ const menuDefinition = [
 				target: 'help/shortcuts.shortcuts'
 			},
 		]
-	}
+	},
 	{
 		name: "Send",
 		children: [
@@ -183,9 +183,4 @@ const menuDefinition = [
 
 ];
 
-<<<<<<< Updated upstream
-
 export default menuDefinition;
-=======
-export default menuDefinition;
->>>>>>> Stashed changes
