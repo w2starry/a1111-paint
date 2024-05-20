@@ -57,7 +57,7 @@ def create_ui():
             # src 属性：指定 iframe 中要加载的内容的 URL。它可以是任何合法的 URL，包括外部网页、本地文件或者是动态生成的内容。
             # onload 属性：指定在 iframe 中的内容加载完成后要执行的 JavaScript 代码。它通常是一个 JavaScript 函数，这个函数会在 iframe 中的内容完全加载完成后被调用。
         )
-        gr.Markdown("Original: [miniPaint](https://github.com/viliusle/miniPaint)")
+        
         gr.Text(str(cn_max), visible=False, elem_id="a1111minipaint_controlnet_max")
 
 def main():
