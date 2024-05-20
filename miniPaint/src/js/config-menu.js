@@ -153,16 +153,7 @@ const menuDefinition = [
 
 		]
 	},
-	{
-		name: 'Help',
-		children: [
-			{
-				name: 'Keyboard Shortcuts',
-				ellipsis: true,
-				target: 'help/shortcuts.shortcuts'
-			},
-		]
-	},
+	
 	{
 		name: "Send",
 		children: [
