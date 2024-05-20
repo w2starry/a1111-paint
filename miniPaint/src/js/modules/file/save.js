@@ -123,6 +123,7 @@ class File_save_class {
 		if (parts.length > 1)
 			file_name = parts[parts.length - 2];
 		file_name = file_name.replace(/ /g, "-");
+		file_name = this.Helper.escapeHtml(file_name);
 
 		var save_types = [];
 		for(var i in file_types) {
@@ -199,38 +200,6 @@ class File_save_class {
 		}
 	}
 
-	save_data_url() {
-		var max = 10 * 1000 * 1000;
-		if (config.WIDTH * config.WIDTH > 10 * 1000 * 1000) {
-			alertify.error('Size is too big, max ' + this.Helper.number_format(max, 0) + ' pixels.');
-			return;
-		}
-
-		var canvas = document.createElement('canvas');
-		var ctx = canvas.getContext("2d");
-		canvas.width = config.WIDTH;
-		canvas.height = config.HEIGHT;
-
-		this.disable_canvas_smooth(ctx);
-
-		//ask data
-		this.Base_layers.convert_layers_to_canvas(ctx, null, false);
-		var data_url = canvas.toDataURL();
-
-		max = 1000 * 1000;
-		if (data_url.length > max) {
-			alertify.error('Size is too big, max ' + this.Helper.number_format(max, 0) + ' bytes.');
-			return;
-		}
-
-		var settings = {
-			title: 'Data URL',
-			params: [
-				{name: "url", title: "URL:", type: "textarea", value: data_url},
-			],
-		};
-		this.POP.show(settings);
-	}
 
 	update_file_size(file_size) {
 		if (typeof file_size == 'string') {
@@ -728,15 +697,6 @@ class File_save_class {
 		ctx.oImageSmoothingEnabled = false;
 		ctx.msImageSmoothingEnabled = false;
 		ctx.imageSmoothingEnabled = false;
-	}
-	async export_data_url() {
-		var canvas = document.createElement('canvas');
-		var ctx = canvas.getContext("2d");
-		canvas.width = config.WIDTH;
-		canvas.height = config.HEIGHT;
-		this.disable_canvas_smooth(ctx);
-		this.Base_layers.convert_layers_to_canvas(ctx, null, false);
-		return canvas.toDataURL();
 	}
 
 }

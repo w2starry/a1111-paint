@@ -17,8 +17,6 @@ class Help_shortcuts_class {
 				{title: "Ctrl + C", value: 'Copy to Clipboard'},
 				{title: "D", value: 'Duplicate'},
 				{title: "S", value: 'Export'},
-				{title: "G", value: 'Grid on/off'},
-				{title: "I", value: 'Information'},
 				{title: "N", value: 'New layer'},
 				{title: "O", value: 'Open'},
 				{title: "CTRL + V", value: 'Paste'},

@@ -5,8 +5,8 @@ import Base_layers_class from './../core/base-layers.js';
 
 class Brush_class extends Base_tools_class {
 
-	constructor(ctx) {  // 自己的构造函数
-		super();   // 调用父类 Base_tools_class 的构造函数
+	constructor(ctx) {
+		super();
 		this.Base_layers = new Base_layers_class();
 		this.name = 'brush';
 		this.layer = {};
@@ -32,7 +32,7 @@ class Brush_class extends Base_tools_class {
 		});
 
 		//mouse events
-		document.addEventListener('mousedown', function (event) {  // event由浏览器自动生成
+		document.addEventListener('mousedown', function (event) {
 			if(is_touch)
 				return;
 			_this.dragStart(event);
@@ -567,4 +567,4 @@ class Brush_class extends Base_tools_class {
 
 }
 
-export default Brush_class; //将 Brush_class 类导出为一个模块，使其可以在其他文件中被导入和使用，当其他文件导入这个模块时，可以使用 import 语句来获取默认导出的内容。
+export default Brush_class;

@@ -59,7 +59,7 @@ body.theme-light{
 	--button-shadow-color: rgba(0, 0, 0, 0.1);
 	--button-toggle-background-color: #b7b7b7;
 	--button-toggle-background-color-hover: #b7b7b7;
-	--input-background-color: #ffffff;
+	--input-background-color: #000000;
 	--input-background-color-hover: #ddd;
 	--input-text-color: #0c0c0d;
 	--input-border-color: #ccc;
@@ -95,7 +95,7 @@ body.theme-green{
 	--button-text-color-active: #ccc;
 	--button-toggle-background-color: #243e05;
 	--button-toggle-background-color-hover: #243e05;
-	--input-background-color: #ffffff;
+	--input-background-color: #000000;
 	--input-background-color-hover: #ddd;
 	--input-text-color: #0c0c0d;
 	--input-border-color: #ccc;
@@ -117,7 +117,7 @@ body.theme-green{
 	background-repeat: no-repeat;
 }
 html {
-	font-size: 10px; /* Base is 10px for easy REM calculation */
+	font-size: 15px; /* Base is 10px for easy REM calculation */
 }
 body{
 	margin: 0;

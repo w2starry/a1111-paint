@@ -45,7 +45,7 @@ window.addEventListener('load', function (e) {
 	app.Tools = Base_tools;
 
 	// Register as global for quick or external access
-	window.Layers = Layers;  //可以在页面的任何其他 JavaScript 代码中使用 window.Layers 来访问 Layers 对象的方法和属性
+	window.Layers = Layers;
 	window.AppConfig = config;
 	window.State = Base_state;
 	window.FileOpen = File_open;

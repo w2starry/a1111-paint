@@ -26,7 +26,7 @@ class File_new_class {
 		var width = config.WIDTH;
 		var height = config.HEIGHT;
 		var common_dimensions = this.Base_gui.common_dimensions;
-		var resolution_types = [];
+		var resolution_types = ['Custom'];
 		var units = this.Tools_settings.get_setting('default_units');
 		var resolution = this.Tools_settings.get_setting('resolution');
 
@@ -34,7 +34,6 @@ class File_new_class {
 			var value = common_dimensions[i];
 			resolution_types.push(value[0] + 'x' + value[1] + ' - ' + value[2]);
 		}
-		resolution_types.push('Custom')
 
 		var transparency_cookie = this.Helper.getCookie('transparency');
 		if (transparency_cookie === null) {

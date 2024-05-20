@@ -7,8 +7,6 @@ import app from "./../app.js";
 import config from "./../config.js";
 import Base_gui_class from "./base-gui.js";
 import Base_selection_class from "./base-selection.js";
-import Image_trim_class from "./../modules/image/trim.js";
-import View_ruler_class from "./../modules/view/ruler.js";
 import zoomView from "./../libs/zoomView.js";
 import Helper_class from "./../libs/helpers.js";
 import alertify from "./../../../node_modules/alertifyjs/build/alertify.min.js";
@@ -52,8 +50,6 @@ class Base_layers_class {
 
 		this.Base_gui = new Base_gui_class();
 		this.Helper = new Helper_class();
-		this.Image_trim = new Image_trim_class();
-		this.View_ruler = new View_ruler_class();
 
 		this.canvas = document.getElementById("canvas_minipaint");
 		this.ctx = document.getElementById("canvas_minipaint").getContext("2d");
@@ -201,7 +197,6 @@ class Base_layers_class {
 			this.last_zoom = config.ZOOM;
 
 			this.Base_gui.GUI_details.render_details();
-			this.View_ruler.render_ruler();
 
 			if (this.render_success === false) {
 				alertify.error("Rendered with errors.");
@@ -784,25 +779,6 @@ class Base_layers_class {
 			this.render_object(canvas.getContext("2d"), link);
 		}
 
-		//trim
-		if ((can_trim == true || can_trim == undefined) && link.type != null) {
-			var trim_info = this.Image_trim.get_trim_info(layer_id);
-			if (
-				trim_info.left > 0 ||
-				trim_info.top > 0 ||
-				trim_info.right > 0 ||
-				trim_info.bottom > 0
-			) {
-				offset_x = trim_info.left;
-				offset_y = trim_info.top;
-
-				var w = canvas.width - trim_info.left - trim_info.right;
-				var h = canvas.height - trim_info.top - trim_info.bottom;
-				if (w > 1 && h > 1) {
-					this.Helper.change_canvas_size(canvas, w, h, offset_x, offset_y);
-				}
-			}
-		}
 
 		canvas.dataset.x = offset_x;
 		canvas.dataset.y = offset_y;

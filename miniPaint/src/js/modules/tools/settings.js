@@ -124,7 +124,7 @@ class Tools_settings_class {
 			'snap': true,
 			'guides': true,
 			'safe_search': true,
-			'exit_confirm': false,
+			'exit_confirm': true,
 			'default_units': Object.keys(this.default_units_config)[0],
 			'default_units_short': Object.values(this.default_units_config)[0],
 			'resolution': 72,

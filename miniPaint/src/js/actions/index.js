@@ -23,4 +23,4 @@ export { Stop_animation_action } from './stop-animation.js';
 export { Toggle_layer_visibility_action } from './toggle-layer-visibility.js';
 export { Update_config_action } from './update-config.js';
 export { Update_layer_image_action } from './update-layer-image.js';
-export { Update_layer_action } from './update-layer.js'; //从 './update-layer.js' 文件中导出名为 Update_layer_action 的变量或函数
+export { Update_layer_action } from './update-layer.js';

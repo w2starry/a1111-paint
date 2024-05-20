@@ -47,8 +47,6 @@ class Base_gui_class {
 
 		//common image dimensions
 		this.common_dimensions = [
-			[512,512, 'Base Image (SD 1.x)'],
-			[768,768, 'Base Image (SD 2.x)'],
 			[640, 480, '480p'],
 			[800, 600, 'SVGA'],
 			[1024, 768, 'XGA'],
@@ -85,7 +83,7 @@ class Base_gui_class {
 			if (key.indexOf('Base' + '/') < 0) {
 				var moduleKey = key.replace('./', '').replace('.js', '');
 				var classObj = modules_context(key);
-				_this.modules[moduleKey] = new classObj.default();  //实例化并存储在_this.moudles中
+				_this.modules[moduleKey] = new classObj.default();
 			}
 		});
 	}
@@ -312,12 +310,12 @@ class Base_gui_class {
 			if (this.common_dimensions[i][0] > page_w
 				|| this.common_dimensions[i][1] > page_h) {
 				//browser size is too small
-				continue;  //下面几句代码不执行，直接进入下一次循环
+				continue;
 			}
-			config.WIDTH = parseInt(this.common_dimensions[i][0]);  //parseInt，内置函数，将字符串转换为整数
+			config.WIDTH = parseInt(this.common_dimensions[i][0]);
 			config.HEIGHT = parseInt(this.common_dimensions[i][1]);
 			auto_size = true;
-			break; //跳出循环
+			break;
 		}
 
 		if (auto_size == false) {
